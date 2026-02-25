@@ -8,10 +8,15 @@ pipeline {
             }
         }
 
+        stage('Run Python Script') {
+            steps {
+                bat 'python main.py'
+            }
+        }
+
         stage('Run Tests') {
             steps {
-                bat 'python --version'
-                bat 'python test_app.py'
+                bat 'python test_utils.py'
             }
         }
     }
